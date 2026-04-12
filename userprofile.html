@@ -1,0 +1,96 @@
+<html>
+<title>User Profile</title>
+
+<style>
+#bg-video{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	z-index:-1;
+	}
+	
+	body{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		height: 100vh;
+		flex-direction:column;
+		font-family: gabriola;
+		font-size: 14;
+		color: #FF0000
+	}
+	
+	.profile-box{
+		border:3px solid #B22222 !important;
+		padding: 20px;
+		border-radius: 10px;
+		background-color: #FFA500;
+	}
+	
+	h1{ 
+	color:#8B0000;
+	}
+	
+	h3{ 
+	color:#FF6347;
+	}
+	
+	p{
+	color: #FF0000
+	}
+	
+</style>
+
+<body>
+<video autoplay muted loop id="bg-video" >
+	<source src="bg.mp4" type="video/mp4">
+</video>
+
+<h1>Profile</h1><br><br>
+
+<div class="profile-box">
+
+	<img id="profilePic" src="pfp.png" alt="Profile Picture">
+
+	<h1 id="displayUsername"></h1>	
+	<h2>Bio</h2>
+	<p id="bio"></p>
+
+	<h2>Book List</h2>
+		<ul id="bookList">
+			<li>Book</li>
+			<li>Book</li>
+			<li>Book</li>
+		</ul>
+</div>
+
+
+<script>
+let username= localStorage.getItem("username");
+if (display) {
+	display.textContent = username;
+}
+
+let bio= localStorage.getItem("bio");
+let books= JSON.parse(localStorage.getItem("books"));
+
+document.getElementById("bio").textContent=bio;
+document.getElementById("bookList");
+
+let booklist= document.getElementById("bookList");
+
+books.forEach(book=>{
+	let li = document.createElement("li");
+	li.textContent=book;
+	bookList.appendChild(.i);
+	});
+	
+</script>
+
+</body>
+
+</html>
+

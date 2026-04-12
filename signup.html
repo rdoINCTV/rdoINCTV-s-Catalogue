@@ -1,0 +1,97 @@
+<html>
+<head>
+	<title>Sign Up - rdoINCTV</title>
+</head>
+
+<style>
+	body{
+		background-color: #D8BFD8;
+		
+		font-family: gabriola;
+	}
+	
+	.container{
+	display: flex;
+	align-items: flex-start;
+	gap: 40px;
+}
+
+h1,h2{
+	margin:0;
+}
+
+form{
+	flex: 3;
+	max-width: 700px;
+}
+
+.video-side{
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.video-side video{
+	width: 380px;
+	height: auto;
+}
+</style>
+
+<body>
+
+<h1>Sign up</h1>
+<h2>For rdoINCTV's Catalogue</h2>
+
+<div class="container">
+
+	<form action="signin.html" method="GET">
+		
+		<label for="username">Username:</label><br>
+		<input type="text" id="username" name="username"required><br><br>
+		
+		<label for="email">Email:</label><br>
+		<input type="email" id="email" name="email"required><br><br>	
+
+		<label for="password">Password:</label><br>
+		<input type="password" id="password" name="password"><br><br>
+
+		<label for="gender">Gender:</label><br>
+		<input type="radio" name="gender" value="male"> Male
+		<input type="radio" name="gender" value="female"> Female <br><br>
+
+		<label for="geographical location">Location:</label><br>
+		<select name="geographical location">
+		<option value="north america"> North America </option>
+		<option value="south america"> South America </option>
+		<option value="europe"> Europe </option>
+		<option value="africa"> Africa </option>
+		<option value="asia"> Asia </option>
+		<option value="australia"> Australia </option>
+		</select><br><br>
+		
+		<label for="message">Message:</label><br>
+		<textarea name="message" rows="4" cols="30"></textarea><br><br>
+		<input type="submit" value="submit">
+		
+		<p>Already have an account?<a href="./signin.html">Sign in here</a></p>
+	</form>
+	
+	<div class="video-side">
+		<video autoplay loop muted playsinline>
+			<source src="bg.mp4" type="video/mp4">
+		</video>
+	</div>
+	
+</div>
+
+<script>
+function saveData(){
+let username = document.getElementById("username").value;
+
+localStorage.setItem("username", username)
+}
+</script>
+
+</body>
+</html>

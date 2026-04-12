@@ -1,0 +1,73 @@
+<html>
+
+<head>
+	<title>Sign In - rdoINCTV</title>
+</head>
+
+<style>
+	body{
+		background-color: #D8BFD8;
+		
+		font-family: gabriola;
+	}
+	
+	.container{
+	display: flex;
+	align-items: flex-start;
+	gap: 40px;
+}
+
+h1,h2{
+	margin:0;
+}
+
+form{
+	flex: 3;
+	max-width: 700px;
+}
+
+.video-side{
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.video-side video{
+	width: 380px;
+	height: auto;
+}
+</style>
+
+<h1>Sign In</h1>
+<h2>To rdoINCTV'S  Catalogue</h2>
+
+
+<div class="container">
+	<form action="rdoINCTV.html" method="POST" onsubmit="saveName(event)">
+		
+		<label>Username:</label>
+		<input type="text" id="username" name="username" required><br><br>
+		
+		<label>Password:</label>
+		<input type="password" name="password" required><br><br>
+		
+			<input type="submit" value="Sign In"><br><br>
+	</form>
+	
+	<div class="video-side">
+		<video autoplay loop muted playsinline>
+			<source src="bg.mp4" type="video/mp4">
+		</video>
+	</div>
+</div>
+
+<script>
+function saveName(event) {
+const username= document.getElementById("username").value;
+localStorage.setItem("username", username);
+}
+</script>
+
+</body>
+</html>
